@@ -11,15 +11,12 @@
     sans-serif;
 
   color: #ffffff;
-
   background: #162733;
 }
-
 
 * {
   box-sizing: border-box;
 }
-
 
 html,
 body {
@@ -33,12 +30,10 @@ body {
   background: #162733;
 }
 
-
 button {
   font: inherit;
   color: inherit;
 }
-
 
 
 /* =========================================================
@@ -55,7 +50,6 @@ button {
 
   overflow: hidden;
 }
-
 
 .scene {
   position: relative;
@@ -77,7 +71,6 @@ button {
   transform-origin: center;
 }
 
-
 .background-layer,
 .gui-layer,
 .flood-overlay {
@@ -85,7 +78,6 @@ button {
 
   inset: 0;
 }
-
 
 
 /* =========================================================
@@ -104,11 +96,10 @@ button {
   background-repeat: no-repeat;
 }
 
-
-/*
-  카메라를 못 켰을 때
-  현재 화면 fallback
-*/
+/**
+ * 카메라를 못 켰을 때
+ * 현재 화면 fallback
+ */
 
 body[data-year="current"]
 .background-layer {
@@ -116,11 +107,10 @@ body[data-year="current"]
     url("./hanriver-bg.png");
 }
 
-
-/*
-  미래 연도에서는
-  카메라 대신 각 시뮬레이션 이미지 사용
-*/
+/**
+ * 미래 연도에서는
+ * 카메라 대신 각 시뮬레이션 이미지 사용
+ */
 
 body[data-year="2050"]
 .background-layer {
@@ -128,20 +118,17 @@ body[data-year="2050"]
     url("./hanriver-bg2.png");
 }
 
-
 body[data-year="2075"]
 .background-layer {
   background-image:
     url("./hanriver-bg3.png");
 }
 
-
 body[data-year="2100"]
 .background-layer {
   background-image:
     url("./hanriver-bg4.png");
 }
-
 
 
 /* 실제 카메라 */
@@ -166,16 +153,14 @@ body[data-year="2100"]
     opacity .35s ease;
 }
 
-
-/*
-  미래 연도에서는 카메라 숨김
-*/
+/**
+ * 미래 연도에서는 카메라 숨김
+ */
 
 body:not([data-year="current"])
 .camera-feed {
   opacity: 0;
 }
-
 
 
 /* 카메라 시작 버튼 */
@@ -223,22 +208,19 @@ body:not([data-year="current"])
     blur(20px);
 }
 
-
 .camera-start-button[hidden] {
   display: none;
 }
 
-
-/*
-  미래 연도에서는
-  카메라 버튼도 숨김
-*/
+/**
+ * 미래 연도에서는
+ * 카메라 버튼도 숨김
+ */
 
 body:not([data-year="current"])
 .camera-start-button {
   display: none;
 }
-
 
 
 /* =========================================================
@@ -265,11 +247,9 @@ body:not([data-year="current"])
     blur(20px);
 }
 
-
 .gui-layer {
   z-index: 3;
 }
-
 
 
 /* =========================================================
@@ -299,7 +279,6 @@ body:not([data-year="current"])
     rgba(52, 81, 111, .42);
 }
 
-
 .year {
   width: 112px;
   height: 46px;
@@ -326,7 +305,6 @@ body:not([data-year="current"])
   letter-spacing: -.5px;
 }
 
-
 .year.selected {
   width: 102px;
 
@@ -343,7 +321,6 @@ body:not([data-year="current"])
 }
 
 
-
 /* =========================================================
    왼쪽
 ========================================================= */
@@ -357,11 +334,9 @@ body:not([data-year="current"])
   width: 230px;
 }
 
-
 .menu-group {
   margin-bottom: 19px;
 }
-
 
 .menu {
   width: 100%;
@@ -393,7 +368,6 @@ body:not([data-year="current"])
   letter-spacing: -.65px;
 }
 
-
 .response-menu {
   background:
     linear-gradient(
@@ -402,7 +376,6 @@ body:not([data-year="current"])
       rgba(148, 125, 105, .48)
     );
 }
-
 
 .chevron {
   width: 0;
@@ -421,13 +394,11 @@ body:not([data-year="current"])
     transform .3s ease;
 }
 
-
 .menu[aria-expanded="true"]
 .chevron {
   transform:
     rotate(180deg);
 }
-
 
 
 /* =========================================================
@@ -461,7 +432,6 @@ body:not([data-year="current"])
     margin .3s ease;
 }
 
-
 .submenu.open {
   max-height: 390px;
 
@@ -475,7 +445,6 @@ body:not([data-year="current"])
   opacity: 1;
 }
 
-
 .submenu-divider {
   height: 1px;
 
@@ -487,7 +456,6 @@ body:not([data-year="current"])
   background:
     rgba(255, 255, 255, .24);
 }
-
 
 .submenu-item {
   width: 100%;
@@ -517,7 +485,6 @@ body:not([data-year="current"])
   cursor: pointer;
 }
 
-
 .submenu-item.active {
   background:
     rgba(173, 163, 109, .22);
@@ -528,14 +495,34 @@ body:not([data-year="current"])
 }
 
 
+/* 기후 시뮬레이션 아이콘 */
+
 .climate-menu-icon {
   width: 30px;
   height: 30px;
+
   flex: 0 0 30px;
+
   display: block;
+
   object-fit: contain;
 }
 
+
+/* 대응 요소 배치 아이콘 */
+
+.response-menu-icon {
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 40px;
+
+  display: block;
+
+  object-fit: contain;
+
+  opacity: 1;
+}
 
 
 /* =========================================================
@@ -560,7 +547,6 @@ body:not([data-year="current"])
     );
 }
 
-
 .map-preview {
   width: 100%;
   height: 144px;
@@ -581,7 +567,6 @@ body:not([data-year="current"])
     0;
 }
 
-
 .map-card-footer {
   height: 72px;
 
@@ -594,7 +579,6 @@ body:not([data-year="current"])
   align-items: center;
 }
 
-
 .map-location-name {
   font-size: 17px;
 
@@ -602,7 +586,6 @@ body:not([data-year="current"])
 
   letter-spacing: -.35px;
 }
-
 
 
 /* =========================================================
@@ -635,7 +618,6 @@ body:not([data-year="current"])
     );
 }
 
-
 .card-header {
   height: 32px;
 
@@ -648,7 +630,6 @@ body:not([data-year="current"])
   padding-right: 5px;
 }
 
-
 .card-header h1 {
   margin: 0;
 
@@ -658,7 +639,6 @@ body:not([data-year="current"])
 
   letter-spacing: -.5px;
 }
-
 
 .scenario {
   padding:
@@ -676,7 +656,6 @@ body:not([data-year="current"])
 
   font-size: 16px;
 }
-
 
 
 /* =========================================================
@@ -702,12 +681,10 @@ body:not([data-year="current"])
   letter-spacing: -3px;
 }
 
-
 .sea-level
 #sea-level-value {
   font-size: inherit;
 }
-
 
 .sea-unit {
   margin-left: 5px;
@@ -716,7 +693,6 @@ body:not([data-year="current"])
 
   letter-spacing: -2px;
 }
-
 
 .sea-caption {
   margin:
@@ -737,7 +713,6 @@ body:not([data-year="current"])
 
   font-weight: 500;
 }
-
 
 .info-icon {
   width: 19px;
@@ -762,7 +737,6 @@ body:not([data-year="current"])
 }
 
 
-
 /* =========================================================
    그래프
 ========================================================= */
@@ -781,7 +755,6 @@ body:not([data-year="current"])
     rgba(255, 255, 255, .29);
 }
 
-
 .chart-section h2 {
   margin:
     0
@@ -793,7 +766,6 @@ body:not([data-year="current"])
   font-weight: 500;
 }
 
-
 .chart {
   width: 336px;
   height: 164px;
@@ -803,7 +775,6 @@ body:not([data-year="current"])
   overflow: visible;
 }
 
-
 .axis-label {
   fill: #ffffff;
 
@@ -812,7 +783,6 @@ body:not([data-year="current"])
   font-size: 16px;
 }
 
-
 .chart-anchor-points circle {
   fill: #6eb8d4;
 
@@ -820,7 +790,6 @@ body:not([data-year="current"])
 
   stroke-width: 2;
 }
-
 
 .chart-selected-point {
   fill: #ee7562;
@@ -836,12 +805,10 @@ body:not([data-year="current"])
     );
 }
 
-
 body[data-year="current"]
 .chart-selected-point {
   display: none;
 }
-
 
 .chart-risk-area {
   opacity: 1;
@@ -849,29 +816,24 @@ body[data-year="current"]
   pointer-events: none;
 }
 
-
 body[data-year="current"]
 .chart-risk-area {
   opacity: 0;
 }
 
-
 .chart-value-label {
   opacity: 1;
 }
-
 
 body[data-year="current"]
 .chart-value-label {
   opacity: 0;
 }
 
-
 .chart-value-label rect {
   fill:
     rgba(201, 91, 75, .90);
 }
-
 
 .chart-value-label text {
   fill: #ffffff;
@@ -884,7 +846,6 @@ body[data-year="current"]
 }
 
 
-
 /* =========================================================
    하단 정보
 ========================================================= */
@@ -892,7 +853,6 @@ body[data-year="current"]
 .metrics {
   margin: 0;
 }
-
 
 .metric {
   height: 72px;
@@ -913,16 +873,13 @@ body[data-year="current"]
   font-size: 17px;
 }
 
-
 .metric:first-child {
   height: 76px;
 }
 
-
 .metric:last-child {
   border: 0;
 }
-
 
 .metric svg {
   width: 36px;
@@ -939,11 +896,9 @@ body[data-year="current"]
   stroke-linejoin: round;
 }
 
-
 .metric dt {
   font-weight: 500;
 }
-
 
 .metric dd {
   margin: 0;
@@ -952,7 +907,6 @@ body[data-year="current"]
 
   line-height: 1.25;
 }
-
 
 
 /* =========================================================
@@ -968,7 +922,6 @@ body[data-year="current"]
   width: 200px;
   height: 78px;
 }
-
 
 .waterline-label {
   width: 200px;
@@ -991,7 +944,6 @@ body[data-year="current"]
   text-align: center;
 }
 
-
 .leader {
   position: absolute;
 
@@ -1010,7 +962,6 @@ body[data-year="current"]
   transform-origin:
     left center;
 }
-
 
 .waterline-dot {
   position: absolute;
@@ -1031,14 +982,12 @@ body[data-year="current"]
     #f0f4f1;
 }
 
-
 body:not([data-year="current"])
 .waterline {
   opacity: 0;
 
   pointer-events: none;
 }
-
 
 
 /* =========================================================
@@ -1056,12 +1005,10 @@ body:not([data-year="current"])
     opacity .25s ease;
 }
 
-
 body:not([data-year="current"])
 .flood-overlay {
   opacity: 1;
 }
-
 
 .waterline-image {
   position: absolute;
@@ -1082,24 +1029,20 @@ body:not([data-year="current"])
   pointer-events: none;
 }
 
-
 body[data-year="2050"]
 .waterline-image {
   opacity: .82;
 }
-
 
 body[data-year="2075"]
 .waterline-image {
   opacity: .90;
 }
 
-
 body[data-year="2100"]
 .waterline-image {
   opacity: .98;
 }
-
 
 
 /* =========================================================
@@ -1127,7 +1070,6 @@ body[data-year="2100"]
   text-align: center;
 }
 
-
 .flood-legend strong {
   display: block;
 
@@ -1137,7 +1079,6 @@ body[data-year="2100"]
 
   font-weight: 600;
 }
-
 
 .flood-legend-row {
   display: flex;
@@ -1151,14 +1092,12 @@ body[data-year="2100"]
   font-size: 14px;
 }
 
-
 .legend-current {
   width: 22px;
   height: 2px;
 
   background: #ffffff;
 }
-
 
 .legend-future {
   width: 24px;
@@ -1167,7 +1106,6 @@ body[data-year="2100"]
   border-top:
     2px dashed #ffffff;
 }
-
 
 
 /* =========================================================
@@ -1193,7 +1131,6 @@ body[data-year="2100"]
     background .45s ease;
 }
 
-
 body[data-year="2050"]
 .scene::after {
   opacity: .10;
@@ -1205,7 +1142,6 @@ body[data-year="2050"]
     85px
     rgba(255, 105, 75, .08);
 }
-
 
 body[data-year="2075"]
 .scene::after {
@@ -1227,7 +1163,6 @@ body[data-year="2075"]
       rgba(255, 66, 50, .23) 100%
     );
 }
-
 
 body[data-year="2100"]
 .scene::after {

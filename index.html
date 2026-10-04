@@ -27,7 +27,6 @@
   ></script>
 </head>
 
-
 <body data-year="current">
 
   <main
@@ -39,7 +38,6 @@
       class="scene"
       id="scene"
     >
-
 
       <!-- =================================================
            배경 / 카메라
@@ -58,7 +56,6 @@
       </div>
 
 
-
       <!-- 카메라 자동 실행 실패 시 표시 -->
 
       <button
@@ -69,7 +66,6 @@
       >
         카메라 시작
       </button>
-
 
 
       <!-- =================================================
@@ -87,13 +83,11 @@
           alt=""
         >
 
-
         <div class="flood-legend glass">
 
           <strong>
             침수 예상 구간
           </strong>
-
 
           <div class="flood-legend-row">
 
@@ -102,7 +96,6 @@
             <span>
               현재 한강 수위
             </span>
-
 
             <span class="legend-future"></span>
 
@@ -115,7 +108,6 @@
         </div>
 
       </div>
-
 
 
       <!-- =================================================
@@ -173,7 +165,6 @@
         </nav>
 
 
-
         <!-- =========================
              왼쪽 패널
         ========================== -->
@@ -220,7 +211,13 @@
                 class="submenu-item"
                 type="button"
               >
-                <img class="climate-menu-icon" src="./heatwave.svg" alt="" width="30" height="30">
+                <img
+                  class="climate-menu-icon"
+                  src="./heatwave.svg"
+                  alt=""
+                  width="30"
+                  height="30"
+                >
                 <span>폭염</span>
               </button>
 
@@ -229,7 +226,13 @@
                 class="submenu-item active"
                 type="button"
               >
-                <img class="climate-menu-icon" src="./sealevel.svg" alt="" width="30" height="30">
+                <img
+                  class="climate-menu-icon"
+                  src="./sealevel.svg"
+                  alt=""
+                  width="30"
+                  height="30"
+                >
                 <span>해수면 상승</span>
               </button>
 
@@ -238,7 +241,13 @@
                 class="submenu-item"
                 type="button"
               >
-                <img class="climate-menu-icon" src="./tropical.svg" alt="" width="30" height="30">
+                <img
+                  class="climate-menu-icon"
+                  src="./tropical.svg"
+                  alt=""
+                  width="30"
+                  height="30"
+                >
                 <span>열대야</span>
               </button>
 
@@ -247,7 +256,13 @@
                 class="submenu-item"
                 type="button"
               >
-                <img class="climate-menu-icon" src="./forest%20fires.svg" alt="" width="30" height="30">
+                <img
+                  class="climate-menu-icon"
+                  src="./forest%20fires.svg"
+                  alt=""
+                  width="30"
+                  height="30"
+                >
                 <span>산불</span>
               </button>
 
@@ -256,14 +271,19 @@
                 class="submenu-item"
                 type="button"
               >
-                <img class="climate-menu-icon" src="./air%20quality.svg" alt="" width="30" height="30">
+                <img
+                  class="climate-menu-icon"
+                  src="./air%20quality.svg"
+                  alt=""
+                  width="30"
+                  height="30"
+                >
                 <span>대기질</span>
               </button>
 
             </div>
 
           </div>
-
 
 
           <!-- 대응 요소 -->
@@ -298,31 +318,56 @@
               <div class="submenu-divider"></div>
 
 
+              <!-- 가로수 -->
               <button
                 class="submenu-item"
                 type="button"
               >
-                가로수
+                <img
+                  class="response-menu-icon"
+                  src="./tree.svg"
+                  alt=""
+                  width="40"
+                  height="40"
+                >
+                <span>가로수</span>
               </button>
 
+
+              <!-- 그늘막 -->
               <button
                 class="submenu-item"
                 type="button"
               >
-                그늘막
+                <img
+                  class="response-menu-icon"
+                  src="./shade.svg"
+                  alt=""
+                  width="40"
+                  height="40"
+                >
+                <span>그늘막</span>
               </button>
 
+
+              <!-- 투수포장 -->
               <button
                 class="submenu-item"
                 type="button"
               >
-                투수포장
+                <img
+                  class="response-menu-icon"
+                  src="./pavement.svg"
+                  alt=""
+                  width="40"
+                  height="40"
+                >
+                <span>투수포장</span>
               </button>
 
             </div>
 
           </div>
-
 
 
           <!-- 지도 -->
@@ -337,7 +382,6 @@
               aria-hidden="true"
             ></div>
 
-
             <div class="map-card-footer">
 
               <span class="map-location-name">
@@ -349,7 +393,6 @@
           </section>
 
         </aside>
-
 
 
         <!-- =========================
@@ -372,7 +415,6 @@
             </span>
 
           </header>
-
 
 
           <!-- 해수면 -->
@@ -399,7 +441,6 @@
             </span>
 
           </p>
-
 
 
           <!-- =========================
@@ -445,7 +486,6 @@
                 </linearGradient>
 
 
-
                 <linearGradient
                   id="risk-gradient"
                   gradientUnits="userSpaceOnUse"
@@ -478,7 +518,6 @@
               </defs>
 
 
-
               <!-- Y축 -->
 
               <g class="axis-label">
@@ -502,7 +541,6 @@
               </g>
 
 
-
               <!-- 축 -->
 
               <path
@@ -511,7 +549,6 @@
                 stroke="rgba(255,255,255,.72)"
                 stroke-width="1"
               />
-
 
 
               <!-- 기본 그래프 -->
@@ -532,7 +569,6 @@
               />
 
 
-
               <!-- 위험 영역 -->
 
               <path
@@ -549,7 +585,6 @@
                 "
                 fill="url(#risk-gradient)"
               />
-
 
 
               <!-- 파란 기준점 -->
@@ -583,7 +618,6 @@
               </g>
 
 
-
               <!-- 선택된 미래 시점 -->
 
               <circle
@@ -593,7 +627,6 @@
                 cy="104"
                 r="6"
               />
-
 
 
               <!-- 값 말풍선 -->
@@ -621,7 +654,6 @@
                 </text>
 
               </g>
-
 
 
               <!-- X축 -->
@@ -652,7 +684,6 @@
             </svg>
 
           </div>
-
 
 
           <!-- =========================
@@ -686,7 +717,6 @@
             </div>
 
 
-
             <div class="metric">
 
               <svg
@@ -709,7 +739,6 @@
               </dd>
 
             </div>
-
 
 
             <div class="metric">
@@ -735,11 +764,9 @@
 
             </div>
 
-
           </dl>
 
         </section>
-
 
 
         <!-- =========================
@@ -763,7 +790,6 @@
           <span class="waterline-dot"></span>
 
         </div>
-
 
       </div>
 
