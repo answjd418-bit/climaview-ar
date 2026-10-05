@@ -88,9 +88,9 @@ let cameraStarted =
 async function startCamera() {
 
   /*
-    getUserMedia 자체가 없는 경우
-    정적 현재 이미지로 fallback
-  */
+   * getUserMedia 자체가 없는 경우
+   * 정적 현재 이미지로 fallback
+   */
 
   if (
     !navigator.mediaDevices ||
@@ -101,10 +101,8 @@ async function startCamera() {
       "이 브라우저에서는 카메라 접근을 사용할 수 없습니다."
     );
 
-
     cameraStartButton.hidden =
       true;
-
 
     return;
 
@@ -114,9 +112,9 @@ async function startCamera() {
   try {
 
     /*
-      이미 카메라가 켜져 있으면
-      다시 요청하지 않음
-    */
+     * 이미 카메라가 켜져 있으면
+     * 다시 요청하지 않음
+     */
 
     if (
       cameraStarted &&
@@ -138,12 +136,10 @@ async function startCamera() {
               "environment"
           },
 
-
           width: {
             ideal:
               1920
           },
-
 
           height: {
             ideal:
@@ -151,7 +147,6 @@ async function startCamera() {
           }
 
         },
-
 
         audio:
           false
@@ -190,9 +185,9 @@ async function startCamera() {
 
 
     /*
-      권한 요청이 사용자 터치를 요구할 경우
-      버튼 표시
-    */
+     * 권한 요청이 사용자 터치를 요구할 경우
+     * 버튼 표시
+     */
 
     cameraStartButton.hidden =
       false;
@@ -200,7 +195,6 @@ async function startCamera() {
   }
 
 }
-
 
 
 /* 카메라 버튼 */
@@ -215,10 +209,9 @@ cameraStartButton.addEventListener(
 );
 
 
-
 /*
-  최초 로딩 시 자동 시도
-*/
+ * 최초 로딩 시 자동 시도
+ */
 
 startCamera();
 
@@ -484,13 +477,14 @@ function changeYear(key) {
   }
 
 
-
   document.body.dataset.year =
     key;
 
 
-
-  /* 현재로 돌아오면 카메라 재시도 */
+  /*
+   * 현재로 돌아오면
+   * 카메라 재시도
+   */
 
   if (
     key === "current" &&
@@ -502,15 +496,14 @@ function changeYear(key) {
   }
 
 
-
   /* 타임라인 */
 
   yearButtons.forEach(
     (button) => {
 
       const selected =
-        button.dataset.year
-        === key;
+        button.dataset.year ===
+        key;
 
 
       button.classList.toggle(
@@ -526,7 +519,6 @@ function changeYear(key) {
 
     }
   );
-
 
 
   /* 정보 */
@@ -555,12 +547,10 @@ function changeYear(key) {
     data.waterline;
 
 
-
   infoCard.setAttribute(
     "aria-label",
     `${data.title} 기후 정보`
   );
-
 
 
   /* =====================================================
@@ -584,7 +574,6 @@ function changeYear(key) {
   }
 
 
-
   selectedPoint.style.display =
     "block";
 
@@ -599,7 +588,6 @@ function changeYear(key) {
     "cy",
     data.selectedY
   );
-
 
 
   chartValueText.textContent =
@@ -617,7 +605,6 @@ function changeYear(key) {
       ${data.selectedY - 8}
     )`
   );
-
 
 
   riskGradient.setAttribute(
