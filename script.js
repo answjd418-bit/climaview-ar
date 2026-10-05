@@ -188,8 +188,6 @@ async function startCamera() {
 
 
 
-/* 카메라 버튼 */
-
 cameraStartButton.addEventListener(
   "click",
   async () => {
@@ -200,8 +198,6 @@ cameraStartButton.addEventListener(
 );
 
 
-
-/* 최초 실행 */
 
 startCamera();
 
@@ -466,8 +462,6 @@ function changeYear(key) {
 
 
 
-  /* 현재 화면이면 카메라 재시도 */
-
   if (
     key === "current" &&
     !cameraStarted
@@ -478,8 +472,6 @@ function changeYear(key) {
   }
 
 
-
-  /* 타임라인 */
 
   yearButtons.forEach(
     (button) => {
@@ -504,8 +496,6 @@ function changeYear(key) {
   );
 
 
-
-  /* 정보 카드 */
 
   infoTitle.textContent =
     data.title;
@@ -534,8 +524,6 @@ function changeYear(key) {
 
 
 
-  /* 침수 PNG */
-
   if (
     data.waterlineImage
   ) {
@@ -546,10 +534,6 @@ function changeYear(key) {
   }
 
 
-
-  /* =====================================================
-     그래프
-  ====================================================== */
 
   if (
     key === "current"
@@ -566,6 +550,7 @@ function changeYear(key) {
     return;
 
   }
+
 
 
   selectedPoint.style.display =

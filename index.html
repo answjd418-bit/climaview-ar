@@ -58,8 +58,6 @@
       </div>
 
 
-      <!-- 카메라 자동 실행 실패 시 -->
-
       <button
         id="camera-start-button"
         class="camera-start-button glass"
@@ -80,11 +78,6 @@
         aria-hidden="true"
       >
 
-        <!--
-          PNG에는
-          침수영역 / 실선 / 점선 / 기준점만 포함
-        -->
-
         <img
           id="waterline-image"
           class="waterline-image"
@@ -93,9 +86,7 @@
         >
 
 
-        <!-- 침수 예상 구간 카드 -->
-
-        <div class="flood-legend glass">
+        <div class="flood-legend">
 
           <strong>
             침수 예상 구간
@@ -108,7 +99,6 @@
             <span>
               현재 한강 수위
             </span>
-
 
             <span class="legend-future"></span>
 
@@ -456,9 +446,6 @@
           </header>
 
 
-
-          <!-- 해수면 상승값 -->
-
           <p class="sea-level">
 
             <span id="sea-level-value">
@@ -559,7 +546,6 @@
               </defs>
 
 
-              <!-- Y축 -->
 
               <g class="axis-label">
 
@@ -582,8 +568,6 @@
               </g>
 
 
-              <!-- 축 -->
-
               <path
                 d="M39 14v108h265"
                 fill="none"
@@ -591,8 +575,6 @@
                 stroke-width="1"
               />
 
-
-              <!-- 기본 그래프 -->
 
               <path
                 class="chart-area"
@@ -610,8 +592,6 @@
               />
 
 
-              <!-- 위험 영역 -->
-
               <path
                 class="chart-risk-area"
                 d="
@@ -627,8 +607,6 @@
                 fill="url(#risk-gradient)"
               />
 
-
-              <!-- 기준점 -->
 
               <g class="chart-anchor-points">
 
@@ -659,8 +637,6 @@
               </g>
 
 
-              <!-- 선택 시점 -->
-
               <circle
                 id="chart-selected-point"
                 class="chart-selected-point"
@@ -669,8 +645,6 @@
                 r="6"
               />
 
-
-              <!-- 값 말풍선 -->
 
               <g
                 class="chart-value-label"
@@ -696,8 +670,6 @@
 
               </g>
 
-
-              <!-- X축 -->
 
               <g
                 class="axis-label"
