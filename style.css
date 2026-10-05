@@ -986,8 +986,6 @@ body[data-year="current"] .chart-value-label {
 }
 
 
-/* 현재 화면에서는 침수 예상 GUI 숨김 */
-
 body[data-year="current"] .flood-overlay {
   display: none;
 }
@@ -1019,11 +1017,7 @@ body[data-year="2075"] .waterline-image {
 }
 
 
-/* 2100
-   최종 시안 기준:
-   하얀 해안선이 연결 지점으로 오도록
-   폭을 조금 줄이고 오른쪽으로 이동
-*/
+/* 2100 */
 
 body[data-year="2100"] .waterline-image {
   left: -215px;
@@ -1122,9 +1116,7 @@ body[data-year="2100"] .waterline-image {
   height: 2px;
 
   flex:
-    0
-    0
-    22px;
+    0 0 22px;
 
   background: #ffffff;
 }
@@ -1135,9 +1127,7 @@ body[data-year="2100"] .waterline-image {
   height: 0;
 
   flex:
-    0
-    0
-    24px;
+    0 0 24px;
 
   border-top:
     2px dotted #ffffff;
@@ -1228,6 +1218,7 @@ body[data-year="2100"] .flood-legend {
 
 /* =========================================================
    2050 연결선
+   기존 상태 유지
 ========================================================= */
 
 body[data-year="2050"] .flood-connector {
@@ -1250,30 +1241,31 @@ body[data-year="2050"] .flood-anchor {
 
 /* =========================================================
    2075 연결선
-   최종 시안 기준
+   수정:
+   해안선 → 동그라미 → 카드가 이어지도록 조정
 ========================================================= */
 
 body[data-year="2075"] .flood-anchor {
-  left: 352px;
+  left: 325px;
   top: 827px;
 }
 
 
 body[data-year="2075"] .flood-connector {
-  left: 361px;
+  left: 334px;
   top: 836px;
 
-  width: 57px;
+  width: 88px;
 
   transform:
-    rotate(-30deg);
+    rotate(-31deg);
 }
 
 
 
 /* =========================================================
    2100 연결선
-   최종 시안 기준
+   기존 상태 유지
 ========================================================= */
 
 body[data-year="2100"] .flood-anchor {
