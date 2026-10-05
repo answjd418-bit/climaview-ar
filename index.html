@@ -69,7 +69,8 @@
 
 
       <!-- =================================================
-           미래 침수 예상 영역
+           수면선 / 침수 예상 영역
+           연도별 PNG 전체 사용
       ================================================== -->
 
       <div
@@ -78,34 +79,11 @@
       >
 
         <img
+          id="waterline-image"
           class="waterline-image"
-          src="./waterline.png"
+          src="./2026_waterline.png"
           alt=""
         >
-
-        <div class="flood-legend glass">
-
-          <strong>
-            침수 예상 구간
-          </strong>
-
-          <div class="flood-legend-row">
-
-            <span class="legend-current"></span>
-
-            <span>
-              현재 한강 수위
-            </span>
-
-            <span class="legend-future"></span>
-
-            <span>
-              과거 한강 수위
-            </span>
-
-          </div>
-
-        </div>
 
       </div>
 
@@ -174,6 +152,7 @@
           aria-label="기후 시뮬레이션 메뉴"
         >
 
+
           <!-- 기후 시뮬레이션 -->
 
           <div class="menu-group">
@@ -210,6 +189,7 @@
                 class="submenu-item"
                 type="button"
               >
+
                 <img
                   class="climate-menu-icon"
                   src="./heatwave.svg"
@@ -221,6 +201,7 @@
                 <span>
                   폭염
                 </span>
+
               </button>
 
 
@@ -240,6 +221,7 @@
                 <span>
                   해수면 상승
                 </span>
+
               </button>
 
 
@@ -259,6 +241,7 @@
                 <span>
                   열대야
                 </span>
+
               </button>
 
 
@@ -278,6 +261,7 @@
                 <span>
                   산불
                 </span>
+
               </button>
 
 
@@ -297,6 +281,7 @@
                 <span>
                   대기질
                 </span>
+
               </button>
 
             </div>
@@ -336,8 +321,6 @@
               <div class="submenu-divider"></div>
 
 
-              <!-- 가로수 -->
-
               <button
                 class="submenu-item"
                 type="button"
@@ -358,8 +341,6 @@
               </button>
 
 
-              <!-- 그늘막 -->
-
               <button
                 class="submenu-item"
                 type="button"
@@ -379,8 +360,6 @@
 
               </button>
 
-
-              <!-- 투수포장 -->
 
               <button
                 class="submenu-item"
@@ -654,7 +633,7 @@
               </g>
 
 
-              <!-- 선택 시점 -->
+              <!-- 선택된 미래 시점 -->
 
               <circle
                 id="chart-selected-point"
@@ -803,29 +782,6 @@
           </dl>
 
         </section>
-
-
-        <!-- =========================
-             현재 수면선
-        ========================== -->
-
-        <div
-          class="waterline"
-          id="waterline"
-        >
-
-          <span
-            class="waterline-label glass"
-            id="waterline-label"
-          >
-            2026년 현재 수면선
-          </span>
-
-          <span class="leader"></span>
-
-          <span class="waterline-dot"></span>
-
-        </div>
 
       </div>
 

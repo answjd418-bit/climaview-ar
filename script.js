@@ -87,11 +87,6 @@ let cameraStarted =
 
 async function startCamera() {
 
-  /*
-   * getUserMedia 자체가 없는 경우
-   * 정적 현재 이미지로 fallback
-   */
-
   if (
     !navigator.mediaDevices ||
     !navigator.mediaDevices.getUserMedia
@@ -101,8 +96,10 @@ async function startCamera() {
       "이 브라우저에서는 카메라 접근을 사용할 수 없습니다."
     );
 
+
     cameraStartButton.hidden =
       true;
+
 
     return;
 
@@ -110,11 +107,6 @@ async function startCamera() {
 
 
   try {
-
-    /*
-     * 이미 카메라가 켜져 있으면
-     * 다시 요청하지 않음
-     */
 
     if (
       cameraStarted &&
@@ -136,10 +128,12 @@ async function startCamera() {
               "environment"
           },
 
+
           width: {
             ideal:
               1920
           },
+
 
           height: {
             ideal:
@@ -147,6 +141,7 @@ async function startCamera() {
           }
 
         },
+
 
         audio:
           false
@@ -184,17 +179,13 @@ async function startCamera() {
     );
 
 
-    /*
-     * 권한 요청이 사용자 터치를 요구할 경우
-     * 버튼 표시
-     */
-
     cameraStartButton.hidden =
       false;
 
   }
 
 }
+
 
 
 /* 카메라 버튼 */
@@ -209,9 +200,7 @@ cameraStartButton.addEventListener(
 );
 
 
-/*
- * 최초 로딩 시 자동 시도
- */
+/* 최초 로딩 */
 
 startCamera();
 
@@ -241,8 +230,8 @@ const climateData = {
     warningArea:
       "해당 없음",
 
-    waterline:
-      "2026년 현재 수면선",
+    waterlineImage:
+      "./2026_waterline.png",
 
     chartValue:
       "+0 cm",
@@ -279,8 +268,8 @@ const climateData = {
     warningArea:
       "반포 한강공원 저지대 일대",
 
-    waterline:
-      "2050년 예상 수면선 · +11.5cm",
+    waterlineImage:
+      "./2050_waterline.png",
 
     chartValue:
       "+11.5 cm",
@@ -317,8 +306,8 @@ const climateData = {
     warningArea:
       "반포 한강공원, 한강 산책로",
 
-    waterline:
-      "2075년 예상 수면선 · +32.2cm",
+    waterlineImage:
+      "./2075_waterline.png",
 
     chartValue:
       "+32.2 cm",
@@ -355,8 +344,8 @@ const climateData = {
     warningArea:
       "반포 한강공원, 한강변 전역",
 
-    waterline:
-      "2100년 예상 수면선 · +96.1cm",
+    waterlineImage:
+      "./2100_waterline.png",
 
     chartValue:
       "+96.1 cm",
@@ -425,15 +414,9 @@ const warningArea =
   );
 
 
-const waterline =
+const waterlineImage =
   document.getElementById(
-    "waterline"
-  );
-
-
-const waterlineLabel =
-  document.getElementById(
-    "waterline-label"
+    "waterline-image"
   );
 
 
@@ -481,10 +464,8 @@ function changeYear(key) {
     key;
 
 
-  /*
-   * 현재로 돌아오면
-   * 카메라 재시도
-   */
+
+  /* 현재로 돌아오면 카메라 재시도 */
 
   if (
     key === "current" &&
@@ -494,6 +475,7 @@ function changeYear(key) {
     startCamera();
 
   }
+
 
 
   /* 타임라인 */
@@ -521,7 +503,8 @@ function changeYear(key) {
   );
 
 
-  /* 정보 */
+
+  /* 오른쪽 정보 */
 
   infoTitle.textContent =
     data.title;
@@ -543,14 +526,19 @@ function changeYear(key) {
     data.warningArea;
 
 
-  waterlineLabel.textContent =
-    data.waterline;
+
+  /* 수면선 / 침수 이미지 교체 */
+
+  waterlineImage.src =
+    data.waterlineImage;
+
 
 
   infoCard.setAttribute(
     "aria-label",
     `${data.title} 기후 정보`
   );
+
 
 
   /* =====================================================

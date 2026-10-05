@@ -24,6 +24,7 @@ body {
   height: 100%;
 
   margin: 0;
+
   overflow: hidden;
 
   background: #162733;
@@ -119,7 +120,9 @@ body[data-year="2100"]
 }
 
 
-/* 실제 카메라 */
+/* =========================================================
+   카메라
+========================================================= */
 
 .camera-feed {
   position: absolute;
@@ -270,6 +273,7 @@ body:not([data-year="current"])
   justify-content: center;
 
   border: 0;
+
   border-radius: 24px;
 
   background: transparent;
@@ -283,6 +287,7 @@ body:not([data-year="current"])
   font-weight: 500;
 
   letter-spacing: -.5px;
+
   line-height: 1;
 
   white-space: nowrap;
@@ -316,7 +321,7 @@ body:not([data-year="current"])
 
 
 /* =========================================================
-   왼쪽
+   왼쪽 패널
 ========================================================= */
 
 .left-panel {
@@ -899,267 +904,101 @@ body[data-year="current"]
 
 
 /* =========================================================
-   현재 수면선
-========================================================= */
-
-.waterline {
-  position: absolute;
-
-  left: 498px;
-  top: 720px;
-
-  width: 200px;
-  height: 78px;
-}
-
-.waterline-label {
-  width: 200px;
-
-  min-height: 42px;
-
-  padding: 7px 12px;
-
-  display: grid;
-
-  place-items: center;
-
-  border-radius: 24px;
-
-  background:
-    rgba(80, 103, 121, .67);
-
-  font-size: 17px;
-
-  text-align: center;
-}
-
-.leader {
-  position: absolute;
-
-  top: 41px;
-  left: 37px;
-
-  width: 35px;
-  height: 2px;
-
-  background:
-    rgba(255, 255, 255, .77);
-
-  transform:
-    rotate(134deg);
-
-  transform-origin:
-    left center;
-}
-
-.waterline-dot {
-  position: absolute;
-
-  left: 3px;
-  top: 56px;
-
-  width: 20px;
-  height: 20px;
-
-  border:
-    4px solid
-    rgba(131, 158, 174, .8);
-
-  border-radius: 50%;
-
-  background:
-    #f0f4f1;
-}
-
-body:not([data-year="current"])
-.waterline {
-  opacity: 0;
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   미래 침수 이미지
+   연도별 수면선 / 침수 이미지
 ========================================================= */
 
 .flood-overlay {
   z-index: 2;
 
-  opacity: 0;
-
   pointer-events: none;
-
-  transition:
-    opacity .25s ease;
-}
-
-body:not([data-year="current"])
-.flood-overlay {
-  opacity: 1;
 }
 
 
 /*
- * 기본값.
- * 실제 위치는 아래에서 연도별로 따로 조정.
+ * 공통
  */
 
 .waterline-image {
   position: absolute;
 
-  height: auto;
-
   display: block;
+
+  height: auto;
 
   object-fit: contain;
 
   pointer-events: none;
 
-  transform-origin: left top;
+  transform-origin: top left;
 
   transition:
-    left .35s ease,
-    top .35s ease,
-    width .35s ease,
-    opacity .35s ease;
-}
-
-
-/* -------------------------
-   2050년
-------------------------- */
-
-body[data-year="2050"]
-.waterline-image {
-  left: 400px;
-  top: 620px;
-
-  width: 1010px;
-
-  opacity: .84;
-}
-
-
-/* -------------------------
-   2075년
-------------------------- */
-
-body[data-year="2075"]
-.waterline-image {
-  left: 350px;
-  top: 615px;
-
-  width: 1080px;
-
-  opacity: .92;
-}
-
-
-/* -------------------------
-   2100년
-------------------------- */
-
-body[data-year="2100"]
-.waterline-image {
-  left: 25px;
-  top: 610px;
-
-  width: 1290px;
-
-  opacity: .98;
+    opacity .25s ease;
 }
 
 
 /* =========================================================
-   침수 범례
+   2026 현재
+   원본 이미지: 198 x 74
 ========================================================= */
 
-.flood-legend {
-  position: absolute;
+body[data-year="current"]
+.waterline-image {
+  left: 498px;
+  top: 720px;
 
-  width: 324px;
-  height: 94px;
+  width: 198px;
 
-  padding:
-    15px
-    22px;
-
-  border-radius: 24px;
-
-  background:
-    rgba(82, 102, 119, .72);
-
-  text-align: center;
-
-  transition:
-    left .35s ease,
-    top .35s ease;
-}
-
-.flood-legend strong {
-  display: block;
-
-  margin-bottom: 14px;
-
-  font-size: 19px;
-
-  font-weight: 600;
-}
-
-.flood-legend-row {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 8px;
-
-  font-size: 14px;
-
-  white-space: nowrap;
-}
-
-.legend-current {
-  width: 22px;
-  height: 2px;
-
-  flex: 0 0 22px;
-
-  background: #ffffff;
-}
-
-.legend-future {
-  width: 24px;
-  height: 0;
-
-  flex: 0 0 24px;
-
-  border-top:
-    2px dotted #ffffff;
+  opacity: 1;
 }
 
 
-/* -------------------------
-   연도별 범례 위치
-------------------------- */
+/* =========================================================
+   2050
+   원본 이미지: 1185 x 643
+========================================================= */
 
 body[data-year="2050"]
-.flood-legend {
-  left: 475px;
-  top: 655px;
+.waterline-image {
+  left: 400px;
+  top: 625px;
+
+  width: 1185px;
+
+  opacity: 1;
 }
+
+
+/* =========================================================
+   2075
+   원본 이미지: 1502 x 971
+========================================================= */
 
 body[data-year="2075"]
-.flood-legend {
-  left: 405px;
-  top: 725px;
+.waterline-image {
+  left: -5px;
+  top: 622px;
+
+  width: 1502px;
+
+  opacity: 1;
 }
 
+
+/* =========================================================
+   2100
+   원본 이미지: 1713 x 1543
+
+   목표 화면에 맞게 확대해서 사용
+========================================================= */
+
 body[data-year="2100"]
-.flood-legend {
-  left: 327px;
+.waterline-image {
+  left: -130px;
   top: 550px;
+
+  width: 2227px;
+
+  opacity: 1;
 }
 
 
@@ -1187,7 +1026,7 @@ body[data-year="2100"]
 }
 
 
-/* 2050은 거의 위험감 없음 */
+/* 2050 */
 
 body[data-year="2050"]
 .scene::after {
@@ -1202,7 +1041,7 @@ body[data-year="2050"]
 }
 
 
-/* 2075부터 붉은 위험감 */
+/* 2075 */
 
 body[data-year="2075"]
 .scene::after {
@@ -1226,7 +1065,7 @@ body[data-year="2075"]
 }
 
 
-/* 2100 가장 강한 위험감 */
+/* 2100 */
 
 body[data-year="2100"]
 .scene::after {
