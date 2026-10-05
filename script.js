@@ -201,7 +201,7 @@ cameraStartButton.addEventListener(
 
 
 
-/* 최초 로딩 */
+/* 최초 실행 */
 
 startCamera();
 
@@ -461,13 +461,12 @@ function changeYear(key) {
   }
 
 
-
   document.body.dataset.year =
     key;
 
 
 
-  /* 현재 화면으로 돌아올 경우 카메라 */
+  /* 현재 화면이면 카메라 재시도 */
 
   if (
     key === "current" &&
@@ -506,7 +505,7 @@ function changeYear(key) {
 
 
 
-  /* 오른쪽 카드 */
+  /* 정보 카드 */
 
   infoTitle.textContent =
     data.title;
@@ -535,7 +534,7 @@ function changeYear(key) {
 
 
 
-  /* 침수 예상 범위 이미지 */
+  /* 침수 PNG */
 
   if (
     data.waterlineImage
@@ -567,7 +566,6 @@ function changeYear(key) {
     return;
 
   }
-
 
 
   selectedPoint.style.display =

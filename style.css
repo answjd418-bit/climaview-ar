@@ -91,7 +91,7 @@ button {
 
 
 /* =========================================================
-   카메라 / 배경
+   카메라 / 연도별 배경
 ========================================================= */
 
 .background-layer {
@@ -135,7 +135,7 @@ body[data-year="2100"]
 
 
 /* =========================================================
-   실제 카메라
+   카메라
 ========================================================= */
 
 .camera-feed {
@@ -986,7 +986,7 @@ body[data-year="current"]
 
 
 /* =========================================================
-   침수 예상 범위 PNG
+   침수 예상 범위
 ========================================================= */
 
 .flood-overlay {
@@ -1002,6 +1002,8 @@ body[data-year="current"]
 
 .waterline-image {
   position: absolute;
+
+  z-index: 1;
 
   display: block;
 
@@ -1019,10 +1021,7 @@ body[data-year="current"]
 
 
 
-/* =========================================================
-   현재
-   수면선 이미지 완전히 숨김
-========================================================= */
+/* 현재 화면에서는 표시하지 않음 */
 
 body[data-year="current"]
 .flood-overlay {
@@ -1032,7 +1031,7 @@ body[data-year="current"]
 
 
 /* =========================================================
-   2050
+   2050 침수 이미지
 ========================================================= */
 
 body[data-year="2050"]
@@ -1046,7 +1045,7 @@ body[data-year="2050"]
 
 
 /* =========================================================
-   2075
+   2075 침수 이미지
 ========================================================= */
 
 body[data-year="2075"]
@@ -1060,8 +1059,7 @@ body[data-year="2075"]
 
 
 /* =========================================================
-   2100
-   수정된 PNG를 그대로 사용
+   2100 침수 이미지
 ========================================================= */
 
 body[data-year="2100"]
@@ -1070,6 +1068,156 @@ body[data-year="2100"]
   top: 610px;
 
   width: 1713px;
+}
+
+
+
+/* =========================================================
+   침수 예상 구간 카드
+========================================================= */
+
+.flood-legend {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 324px;
+  height: 94px;
+
+  padding:
+    15px
+    22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 24px;
+
+  /*
+   * 오른쪽 정보카드와 비슷한
+   * 자연스러운 반투명 글래스
+   */
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(45, 61, 73, .78),
+      rgba(70, 73, 75, .76)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, .16);
+
+  box-shadow:
+    inset
+    0 1px 1px
+    rgba(255, 255, 255, .10),
+
+    0 10px 28px
+    rgba(10, 24, 40, .12);
+
+  -webkit-backdrop-filter:
+    blur(22px);
+
+  backdrop-filter:
+    blur(22px);
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+
+.flood-legend strong {
+  display: block;
+
+  margin-bottom: 11px;
+
+  font-size: 19px;
+
+  font-weight: 600;
+
+  line-height: 1.1;
+}
+
+
+.flood-legend-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+}
+
+
+.legend-current {
+  width: 22px;
+  height: 2px;
+
+  flex:
+    0
+    0
+    22px;
+
+  background: #ffffff;
+}
+
+
+.legend-future {
+  width: 24px;
+  height: 0;
+
+  flex:
+    0
+    0
+    24px;
+
+  border-top:
+    2px dotted #ffffff;
+}
+
+
+
+/* =========================================================
+   연도별 카드 위치
+========================================================= */
+
+/* 2050 */
+
+body[data-year="2050"]
+.flood-legend {
+  left: 595px;
+  top: 700px;
+}
+
+
+/* 2075 */
+
+body[data-year="2075"]
+.flood-legend {
+  left: 545px;
+  top: 755px;
+}
+
+
+/* 2100 */
+
+body[data-year="2100"]
+.flood-legend {
+  left: 590px;
+  top: 615px;
 }
 
 
@@ -1098,6 +1246,7 @@ body[data-year="2100"]
 }
 
 
+
 /* 2050 */
 
 body[data-year="2050"]
@@ -1111,6 +1260,7 @@ body[data-year="2050"]
     70px
     rgba(255, 105, 75, .04);
 }
+
 
 
 /* 2075 */
@@ -1135,6 +1285,7 @@ body[data-year="2075"]
       rgba(255, 66, 50, .23) 100%
     );
 }
+
 
 
 /* 2100 */

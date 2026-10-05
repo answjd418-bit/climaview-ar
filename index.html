@@ -72,7 +72,7 @@
 
 
       <!-- =================================================
-           연도별 침수 예상 범위 이미지
+           미래 침수 예상 영역
       ================================================== -->
 
       <div
@@ -80,12 +80,45 @@
         aria-hidden="true"
       >
 
+        <!--
+          PNG에는
+          침수영역 / 실선 / 점선 / 기준점만 포함
+        -->
+
         <img
           id="waterline-image"
           class="waterline-image"
           src="./2050_waterline.png"
           alt=""
         >
+
+
+        <!-- 침수 예상 구간 카드 -->
+
+        <div class="flood-legend glass">
+
+          <strong>
+            침수 예상 구간
+          </strong>
+
+          <div class="flood-legend-row">
+
+            <span class="legend-current"></span>
+
+            <span>
+              현재 한강 수위
+            </span>
+
+
+            <span class="legend-future"></span>
+
+            <span>
+              과거 한강 수위
+            </span>
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -526,7 +559,6 @@
               </defs>
 
 
-
               <!-- Y축 -->
 
               <g class="axis-label">
@@ -550,7 +582,6 @@
               </g>
 
 
-
               <!-- 축 -->
 
               <path
@@ -561,8 +592,7 @@
               />
 
 
-
-              <!-- 그래프 영역 -->
+              <!-- 기본 그래프 -->
 
               <path
                 class="chart-area"
@@ -578,7 +608,6 @@
                 "
                 fill="url(#chart-fill)"
               />
-
 
 
               <!-- 위험 영역 -->
@@ -597,7 +626,6 @@
                 "
                 fill="url(#risk-gradient)"
               />
-
 
 
               <!-- 기준점 -->
@@ -631,7 +659,6 @@
               </g>
 
 
-
               <!-- 선택 시점 -->
 
               <circle
@@ -641,7 +668,6 @@
                 cy="104"
                 r="6"
               />
-
 
 
               <!-- 값 말풍선 -->
@@ -669,7 +695,6 @@
                 </text>
 
               </g>
-
 
 
               <!-- X축 -->
@@ -734,7 +759,6 @@
             </div>
 
 
-
             <div class="metric">
 
               <svg
@@ -757,7 +781,6 @@
               </dd>
 
             </div>
-
 
 
             <div class="metric">
