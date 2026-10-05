@@ -83,7 +83,6 @@ button {
 .gui-layer,
 .flood-overlay {
   position: absolute;
-
   inset: 0;
 }
 
@@ -91,7 +90,6 @@ button {
 
 /* =========================================================
    배경
-   기존 이미지 그대로 유지
 ========================================================= */
 
 .background-layer {
@@ -136,7 +134,6 @@ body[data-year="2100"] .background-layer {
 
 .camera-feed {
   position: absolute;
-
   inset: 0;
 
   width: 100%;
@@ -175,8 +172,7 @@ body:not([data-year="current"]) .camera-feed {
   height: 52px;
 
   padding:
-    0
-    24px;
+    0 24px;
 
   border-radius: 26px;
 
@@ -245,7 +241,7 @@ body:not([data-year="current"]) .camera-start-button {
 
 
 /* =========================================================
-   타임라인
+   상단 타임라인
 ========================================================= */
 
 .timeline {
@@ -280,9 +276,7 @@ body:not([data-year="current"]) .camera-start-button {
   height: 46px;
 
   flex:
-    0
-    0
-    122px;
+    0 0 122px;
 
   display: flex;
 
@@ -308,9 +302,7 @@ body:not([data-year="current"]) .camera-start-button {
   line-height: 1;
 
   white-space: nowrap;
-
   word-break: keep-all;
-
   overflow-wrap: normal;
 }
 
@@ -516,9 +508,7 @@ body:not([data-year="current"]) .camera-start-button {
   height: 30px;
 
   flex:
-    0
-    0
-    30px;
+    0 0 30px;
 
   display: block;
 
@@ -531,9 +521,7 @@ body:not([data-year="current"]) .camera-start-button {
   height: 40px;
 
   flex:
-    0
-    0
-    40px;
+    0 0 40px;
 
   display: block;
 
@@ -588,8 +576,7 @@ body:not([data-year="current"]) .camera-start-button {
   height: 72px;
 
   padding:
-    0
-    23px;
+    0 23px;
 
   display: flex;
 
@@ -599,7 +586,6 @@ body:not([data-year="current"]) .camera-start-button {
 
 .map-location-name {
   font-size: 17px;
-
   font-weight: 600;
 
   letter-spacing: -.35px;
@@ -672,7 +658,6 @@ body:not([data-year="current"]) .camera-start-button {
   margin: 0;
 
   font-size: 17px;
-
   font-weight: 500;
 
   letter-spacing: -.5px;
@@ -752,7 +737,6 @@ body:not([data-year="current"]) .camera-start-button {
     rgba(224, 238, 255, .62);
 
   font-size: 17px;
-
   font-weight: 500;
 }
 
@@ -807,7 +791,6 @@ body:not([data-year="current"]) .camera-start-button {
     22px;
 
   font-size: 17px;
-
   font-weight: 500;
 }
 
@@ -894,7 +877,6 @@ body[data-year="current"] .chart-value-label {
   font-family: inherit;
 
   font-size: 12px;
-
   font-weight: 600;
 }
 
@@ -950,7 +932,6 @@ body[data-year="current"] .chart-value-label {
   stroke-width: 2.1;
 
   stroke-linecap: round;
-
   stroke-linejoin: round;
 }
 
@@ -1005,7 +986,7 @@ body[data-year="current"] .chart-value-label {
 }
 
 
-/* 현재 화면에서는 침수 GUI 숨김 */
+/* 현재 화면에서는 침수 예상 GUI 숨김 */
 
 body[data-year="current"] .flood-overlay {
   display: none;
@@ -1014,8 +995,9 @@ body[data-year="current"] .flood-overlay {
 
 
 /* =========================================================
-   연도별 침수 이미지 위치
+   연도별 침수 이미지
 ========================================================= */
+
 
 /* 2050 */
 
@@ -1038,7 +1020,8 @@ body[data-year="2075"] .waterline-image {
 
 
 /* 2100
-   하얀 해안선이 기준점과 연결되도록
+   최종 시안 기준:
+   하얀 해안선이 연결 지점으로 오도록
    폭을 조금 줄이고 오른쪽으로 이동
 */
 
@@ -1163,7 +1146,7 @@ body[data-year="2100"] .waterline-image {
 
 
 /* =========================================================
-   침수 예상 카드 위치
+   침수 카드 위치
 ========================================================= */
 
 body[data-year="2050"] .flood-legend {
@@ -1214,7 +1197,7 @@ body[data-year="2100"] .flood-legend {
 
 
 /* =========================================================
-   연결 기준점 동그라미
+   연결 지점 동그라미
 ========================================================= */
 
 .flood-anchor {
@@ -1245,7 +1228,6 @@ body[data-year="2100"] .flood-legend {
 
 /* =========================================================
    2050 연결선
-   현재 완성된 상태 유지
 ========================================================= */
 
 body[data-year="2050"] .flood-connector {
@@ -1268,7 +1250,7 @@ body[data-year="2050"] .flood-anchor {
 
 /* =========================================================
    2075 연결선
-   최종 디자인 기준
+   최종 시안 기준
 ========================================================= */
 
 body[data-year="2075"] .flood-anchor {
@@ -1291,7 +1273,7 @@ body[data-year="2075"] .flood-connector {
 
 /* =========================================================
    2100 연결선
-   최종 디자인 기준
+   최종 시안 기준
 ========================================================= */
 
 body[data-year="2100"] .flood-anchor {
@@ -1336,7 +1318,6 @@ body[data-year="2100"] .flood-connector {
 }
 
 
-
 /* 2050 */
 
 body[data-year="2050"] .scene::after {
@@ -1349,7 +1330,6 @@ body[data-year="2050"] .scene::after {
     65px
     rgba(255, 105, 75, .035);
 }
-
 
 
 /* 2075 */
@@ -1373,7 +1353,6 @@ body[data-year="2075"] .scene::after {
       rgba(255, 66, 50, .20) 100%
     );
 }
-
 
 
 /* 2100 */

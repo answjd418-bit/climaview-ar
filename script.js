@@ -462,6 +462,8 @@ function changeYear(key) {
 
 
 
+  /* 현재 화면으로 돌아오면 카메라 재시도 */
+
   if (
     key === "current" &&
     !cameraStarted
@@ -472,6 +474,8 @@ function changeYear(key) {
   }
 
 
+
+  /* 타임라인 버튼 상태 변경 */
 
   yearButtons.forEach(
     (button) => {
@@ -496,6 +500,8 @@ function changeYear(key) {
   );
 
 
+
+  /* 오른쪽 정보 카드 */
 
   infoTitle.textContent =
     data.title;
@@ -524,6 +530,8 @@ function changeYear(key) {
 
 
 
+  /* 침수 PNG 변경 */
+
   if (
     data.waterlineImage
   ) {
@@ -534,6 +542,10 @@ function changeYear(key) {
   }
 
 
+
+  /* =====================================================
+     현재 화면
+  ====================================================== */
 
   if (
     key === "current"
@@ -552,6 +564,10 @@ function changeYear(key) {
   }
 
 
+
+  /* =====================================================
+     미래 연도 그래프
+  ====================================================== */
 
   selectedPoint.style.display =
     "block";
@@ -602,7 +618,7 @@ function changeYear(key) {
 
 
 /* =========================================================
-   연도 버튼
+   연도 버튼 클릭
 ========================================================= */
 
 yearButtons.forEach(
@@ -683,6 +699,8 @@ menuButtons.forEach(
             "aria-expanded"
           ) !== "true";
 
+
+        /* 다른 메뉴 먼저 닫기 */
 
         menuButtons.forEach(
           closeMenu

@@ -1,39 +1,50 @@
 <!doctype html>
+
 <html lang="ko">
 
+
 <head>
+
   <meta charset="UTF-8">
+
 
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
 
+
   <meta
     name="theme-color"
     content="#162733"
   >
 
+
   <title>ClimaView AR</title>
+
 
   <link
     rel="stylesheet"
     href="style.css"
   >
 
+
   <script
     src="script.js"
     defer
   ></script>
+
 </head>
 
 
 <body data-year="current">
 
+
   <main
     class="viewport"
     aria-label="한강 기후 시뮬레이션"
   >
+
 
     <div
       class="scene"
@@ -45,7 +56,9 @@
            배경 / 카메라
       ================================================== -->
 
+
       <div class="background-layer">
+
 
         <video
           id="camera-feed"
@@ -54,6 +67,7 @@
           muted
           playsinline
         ></video>
+
 
       </div>
 
@@ -64,19 +78,22 @@
         type="button"
         hidden
       >
-        카메라 시작
-      </button>
 
+        카메라 시작
+
+      </button>
 
 
       <!-- =================================================
            미래 침수 예상 영역
       ================================================== -->
 
+
       <div
         class="flood-overlay"
         aria-hidden="true"
       >
+
 
         <img
           id="waterline-image"
@@ -88,44 +105,56 @@
 
         <!-- 침수 예상 카드 -->
 
+
         <div class="flood-legend">
+
 
           <strong>
             침수 예상 구간
           </strong>
 
+
           <div class="flood-legend-row">
 
+
             <span class="legend-current"></span>
+
 
             <span>
               현재 한강 수위
             </span>
 
+
             <span class="legend-future"></span>
+
 
             <span>
               과거 한강 수위
             </span>
 
+
           </div>
+
 
         </div>
 
 
         <!-- 카드와 수위선 연결 -->
 
+
         <span class="flood-connector"></span>
+
 
         <span class="flood-anchor"></span>
 
-      </div>
 
+      </div>
 
 
       <!-- =================================================
            GUI
       ================================================== -->
+
 
       <div class="gui-layer">
 
@@ -134,10 +163,12 @@
              상단 타임라인
         ========================== -->
 
+
         <nav
           class="timeline glass"
           aria-label="시뮬레이션 연도"
         >
+
 
           <button
             class="year selected"
@@ -148,6 +179,7 @@
             현재
           </button>
 
+
           <button
             class="year"
             type="button"
@@ -156,6 +188,7 @@
           >
             2050년
           </button>
+
 
           <button
             class="year"
@@ -166,6 +199,7 @@
             2075년
           </button>
 
+
           <button
             class="year"
             type="button"
@@ -175,13 +209,14 @@
             2100년
           </button>
 
-        </nav>
 
+        </nav>
 
 
         <!-- =========================
              왼쪽 패널
         ========================== -->
+
 
         <aside
           class="left-panel"
@@ -191,7 +226,9 @@
 
           <!-- 기후 시뮬레이션 -->
 
+
           <div class="menu-group">
+
 
             <button
               class="menu glass"
@@ -200,14 +237,17 @@
               aria-controls="climate-menu"
             >
 
+
               <span>
                 기후 시뮬레이션
               </span>
+
 
               <span
                 class="chevron"
                 aria-hidden="true"
               ></span>
+
 
             </button>
 
@@ -218,6 +258,7 @@
               aria-hidden="true"
             >
 
+
               <div class="submenu-divider"></div>
 
 
@@ -225,6 +266,7 @@
                 class="submenu-item"
                 type="button"
               >
+
 
                 <img
                   class="climate-menu-icon"
@@ -234,7 +276,9 @@
                   height="30"
                 >
 
+
                 <span>폭염</span>
+
 
               </button>
 
@@ -244,6 +288,7 @@
                 type="button"
               >
 
+
                 <img
                   class="climate-menu-icon"
                   src="./sealevel.svg"
@@ -252,7 +297,9 @@
                   height="30"
                 >
 
+
                 <span>해수면 상승</span>
+
 
               </button>
 
@@ -261,6 +308,7 @@
                 class="submenu-item"
                 type="button"
               >
+
 
                 <img
                   class="climate-menu-icon"
@@ -270,7 +318,9 @@
                   height="30"
                 >
 
+
                 <span>열대야</span>
+
 
               </button>
 
@@ -279,6 +329,7 @@
                 class="submenu-item"
                 type="button"
               >
+
 
                 <img
                   class="climate-menu-icon"
@@ -288,7 +339,9 @@
                   height="30"
                 >
 
+
                 <span>산불</span>
+
 
               </button>
 
@@ -298,6 +351,7 @@
                 type="button"
               >
 
+
                 <img
                   class="climate-menu-icon"
                   src="./air%20quality.svg"
@@ -306,19 +360,24 @@
                   height="30"
                 >
 
+
                 <span>대기질</span>
+
 
               </button>
 
+
             </div>
+
 
           </div>
 
 
-
           <!-- 대응 요소 -->
 
+
           <div class="menu-group">
+
 
             <button
               class="menu response-menu glass"
@@ -327,14 +386,17 @@
               aria-controls="response-menu"
             >
 
+
               <span>
                 대응 요소 배치
               </span>
+
 
               <span
                 class="chevron"
                 aria-hidden="true"
               ></span>
+
 
             </button>
 
@@ -345,6 +407,7 @@
               aria-hidden="true"
             >
 
+
               <div class="submenu-divider"></div>
 
 
@@ -352,6 +415,7 @@
                 class="submenu-item"
                 type="button"
               >
+
 
                 <img
                   class="response-menu-icon"
@@ -361,7 +425,9 @@
                   height="40"
                 >
 
+
                 <span>가로수</span>
+
 
               </button>
 
@@ -370,6 +436,7 @@
                 class="submenu-item"
                 type="button"
               >
+
 
                 <img
                   class="response-menu-icon"
@@ -379,7 +446,9 @@
                   height="40"
                 >
 
+
                 <span>그늘막</span>
+
 
               </button>
 
@@ -389,6 +458,7 @@
                 type="button"
               >
 
+
                 <img
                   class="response-menu-icon"
                   src="./pavement.svg"
@@ -397,92 +467,113 @@
                   height="40"
                 >
 
+
                 <span>투수포장</span>
+
 
               </button>
 
+
             </div>
+
 
           </div>
 
 
-
           <!-- 지도 -->
+
 
           <section
             class="map-card glass"
             aria-label="현재 위치: 반포 한강공원"
           >
 
+
             <div
               class="map-preview"
               aria-hidden="true"
             ></div>
 
+
             <div class="map-card-footer">
+
 
               <span class="map-location-name">
                 반포 한강공원
               </span>
 
+
             </div>
+
 
           </section>
 
-        </aside>
 
+        </aside>
 
 
         <!-- =========================
              오른쪽 정보 카드
         ========================== -->
 
+
         <section
           class="info-card glass"
           id="info-card"
         >
 
+
           <header class="card-header">
+
 
             <h1 id="info-title">
               2026년 현재의 한강
             </h1>
 
+
             <span class="scenario">
               SSPS - 8.5
             </span>
+
 
           </header>
 
 
           <p class="sea-level">
 
+
             <span id="sea-level-value">
               +0
             </span>
 
+
             <span class="sea-unit">
               cm
             </span>
+
 
           </p>
 
 
           <p class="sea-caption">
 
+
             2000년 대비 평균 해수면 상승
+
 
             <span class="info-icon">
               i
             </span>
 
-          </p>
 
+          </p>
 
 
           <!-- 그래프 -->
 
+
           <div class="chart-section">
+
 
             <h2>
               한강 수위 변화 추이 (cm)
@@ -496,7 +587,9 @@
               aria-label="한강 수위 변화 추이"
             >
 
+
               <defs>
+
 
                 <linearGradient
                   id="chart-fill"
@@ -506,17 +599,20 @@
                   y2="0"
                 >
 
+
                   <stop
                     offset="0"
                     stop-color="#4ca8ce"
                     stop-opacity=".40"
                   />
 
+
                   <stop
                     offset="1"
                     stop-color="#62c7ed"
                     stop-opacity=".95"
                   />
+
 
                 </linearGradient>
 
@@ -530,11 +626,13 @@
                   y2="0"
                 >
 
+
                   <stop
                     offset="0"
                     stop-color="#ef6d5f"
                     stop-opacity="0"
                   />
+
 
                   <stop
                     offset=".50"
@@ -542,23 +640,31 @@
                     stop-opacity=".82"
                   />
 
+
                   <stop
                     offset="1"
                     stop-color="#ef6d5f"
                     stop-opacity="0"
                   />
 
+
                 </linearGradient>
+
 
               </defs>
 
 
               <g class="axis-label">
 
+
                 <text x="0" y="28">120</text>
+
                 <text x="0" y="60">80</text>
+
                 <text x="0" y="92">40</text>
+
                 <text x="0" y="124">0</text>
+
 
               </g>
 
@@ -605,10 +711,15 @@
 
               <g class="chart-anchor-points">
 
+
                 <circle cx="39" cy="116" r="5" />
+
                 <circle cx="102" cy="104" r="5" />
+
                 <circle cx="183" cy="86" r="5" />
+
                 <circle cx="265" cy="63" r="5" />
+
 
               </g>
 
@@ -627,6 +738,7 @@
                 id="chart-value-label"
               >
 
+
                 <rect
                   x="-34"
                   y="-29"
@@ -634,6 +746,7 @@
                   height="26"
                   rx="13"
                 />
+
 
                 <text
                   id="chart-value-text"
@@ -644,6 +757,7 @@
                   +11.5 cm
                 </text>
 
+
               </g>
 
 
@@ -652,99 +766,131 @@
                 text-anchor="middle"
               >
 
+
                 <text x="39" y="151">현재</text>
+
                 <text x="102" y="151">2030년대</text>
+
                 <text x="183" y="151">2050년대</text>
+
                 <text x="265" y="151">2090년대</text>
+
 
               </g>
 
+
             </svg>
+
 
           </div>
 
 
-
           <!-- 하단 정보 -->
+
 
           <dl class="metrics">
 
 
             <div class="metric">
 
+
               <svg
                 viewBox="0 0 36 38"
                 aria-hidden="true"
               >
+
                 <path
                   d="M6 23V8a4 4 0 0 1 8 0v15a7 7 0 1 1-8 0Zm4-5v10m9-19q3 5 6 0 3 5 6 0m-13 10q3 5 6 0 3 5 7 0M17 5v9"
                 />
+
               </svg>
+
 
               <dt>
                 평균 수온
               </dt>
 
+
               <dd id="water-temperature">
                 11.7°C
               </dd>
+
 
             </div>
 
 
             <div class="metric">
 
+
               <svg
                 viewBox="0 0 36 38"
                 aria-hidden="true"
               >
+
                 <path
                   d="M17 3s-7 9-7 14a7 7 0 0 0 14 0c0-5-7-14-7-14ZM5 28q5-4 10 0t11 0M5 33q5-4 10 0t11 0"
                 />
+
               </svg>
+
 
               <dt>
                 침수 영향
               </dt>
 
+
               <dd id="flood-impact">
                 없음
               </dd>
+
 
             </div>
 
 
             <div class="metric">
 
+
               <svg
                 viewBox="0 0 36 38"
                 aria-hidden="true"
               >
+
                 <path
                   d="m5 23 9-17q2-4 4 0l10 17M16 12v6m0 4v.2M5 29q5-4 10 0t11 0M5 34q5-4 10 0t11 0"
                 />
+
               </svg>
+
 
               <dt>
                 주의 지역
               </dt>
 
+
               <dd id="warning-area">
                 해당 없음
               </dd>
 
+
             </div>
+
 
           </dl>
 
+
         </section>
+
 
       </div>
 
+
     </div>
+
 
   </main>
 
+
 </body>
+
 
 </html>
