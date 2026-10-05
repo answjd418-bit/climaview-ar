@@ -996,9 +996,6 @@ body[data-year="current"] .flood-overlay {
    연도별 침수 이미지
 ========================================================= */
 
-
-/* 2050 */
-
 body[data-year="2050"] .waterline-image {
   left: 385px;
   top: 611px;
@@ -1007,8 +1004,6 @@ body[data-year="2050"] .waterline-image {
 }
 
 
-/* 2075 */
-
 body[data-year="2075"] .waterline-image {
   left: -30px;
   top: 610px;
@@ -1016,8 +1011,6 @@ body[data-year="2075"] .waterline-image {
   width: 1502px;
 }
 
-
-/* 2100 */
 
 body[data-year="2100"] .waterline-image {
   left: -215px;
@@ -1090,7 +1083,6 @@ body[data-year="2100"] .waterline-image {
   margin-bottom: 11px;
 
   font-size: 19px;
-
   font-weight: 600;
 
   line-height: 1.1;
@@ -1116,7 +1108,9 @@ body[data-year="2100"] .waterline-image {
   height: 2px;
 
   flex:
-    0 0 22px;
+    0
+    0
+    22px;
 
   background: #ffffff;
 }
@@ -1127,7 +1121,9 @@ body[data-year="2100"] .waterline-image {
   height: 0;
 
   flex:
-    0 0 24px;
+    0
+    0
+    24px;
 
   border-top:
     2px dotted #ffffff;
@@ -1217,7 +1213,7 @@ body[data-year="2100"] .flood-legend {
 
 
 /* =========================================================
-   2050 연결선
+   2050
 ========================================================= */
 
 body[data-year="2050"] .flood-connector {
@@ -1239,33 +1235,31 @@ body[data-year="2050"] .flood-anchor {
 
 
 /* =========================================================
-   2075 연결선
-
-   수정 포인트:
-   흰색 해안선 위로 동그라미 이동
-   카드까지 다시 길이/각도 맞춤
+   2075
+   최종 미세조정:
+   이전 두 위치의 중간값으로 이동
 ========================================================= */
 
 body[data-year="2075"] .flood-anchor {
-  left: 294px;
+  left: 310px;
   top: 827px;
 }
 
 
 body[data-year="2075"] .flood-connector {
-  left: 303px;
+  left: 319px;
   top: 836px;
 
-  width: 116px;
+  width: 101px;
 
   transform:
-    rotate(-23deg);
+    rotate(-26deg);
 }
 
 
 
 /* =========================================================
-   2100 연결선
+   2100
 ========================================================= */
 
 body[data-year="2100"] .flood-anchor {
@@ -1310,8 +1304,6 @@ body[data-year="2100"] .flood-connector {
 }
 
 
-/* 2050 */
-
 body[data-year="2050"] .scene::after {
   opacity: .025;
 
@@ -1323,8 +1315,6 @@ body[data-year="2050"] .scene::after {
     rgba(255, 105, 75, .035);
 }
 
-
-/* 2075 */
 
 body[data-year="2075"] .scene::after {
   opacity: 1;
@@ -1346,8 +1336,6 @@ body[data-year="2075"] .scene::after {
     );
 }
 
-
-/* 2100 */
 
 body[data-year="2100"] .scene::after {
   opacity: 1;
