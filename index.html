@@ -78,6 +78,7 @@
         aria-hidden="true"
       >
 
+        <!-- 침수 범위 PNG -->
         <img
           id="waterline-image"
           class="waterline-image"
@@ -86,6 +87,7 @@
         >
 
 
+        <!-- 침수 예상 구간 카드 -->
         <div class="flood-legend">
 
           <strong>
@@ -109,6 +111,13 @@
           </div>
 
         </div>
+
+
+        <!-- 카드 ↔ 기준점 연결선 -->
+        <span class="flood-connector"></span>
+
+        <!-- 기준점 -->
+        <span class="flood-anchor"></span>
 
       </div>
 
@@ -546,24 +555,12 @@
               </defs>
 
 
-
               <g class="axis-label">
 
-                <text x="0" y="28">
-                  120
-                </text>
-
-                <text x="0" y="60">
-                  80
-                </text>
-
-                <text x="0" y="92">
-                  40
-                </text>
-
-                <text x="0" y="124">
-                  0
-                </text>
+                <text x="0" y="28">120</text>
+                <text x="0" y="60">80</text>
+                <text x="0" y="92">40</text>
+                <text x="0" y="124">0</text>
 
               </g>
 
@@ -610,29 +607,10 @@
 
               <g class="chart-anchor-points">
 
-                <circle
-                  cx="39"
-                  cy="116"
-                  r="5"
-                />
-
-                <circle
-                  cx="102"
-                  cy="104"
-                  r="5"
-                />
-
-                <circle
-                  cx="183"
-                  cy="86"
-                  r="5"
-                />
-
-                <circle
-                  cx="265"
-                  cy="63"
-                  r="5"
-                />
+                <circle cx="39" cy="116" r="5" />
+                <circle cx="102" cy="104" r="5" />
+                <circle cx="183" cy="86" r="5" />
+                <circle cx="265" cy="63" r="5" />
 
               </g>
 
@@ -676,21 +654,10 @@
                 text-anchor="middle"
               >
 
-                <text x="39" y="151">
-                  현재
-                </text>
-
-                <text x="102" y="151">
-                  2030년대
-                </text>
-
-                <text x="183" y="151">
-                  2050년대
-                </text>
-
-                <text x="265" y="151">
-                  2090년대
-                </text>
+                <text x="39" y="151">현재</text>
+                <text x="102" y="151">2030년대</text>
+                <text x="183" y="151">2050년대</text>
+                <text x="265" y="151">2090년대</text>
 
               </g>
 
@@ -713,11 +680,9 @@
                 viewBox="0 0 36 38"
                 aria-hidden="true"
               >
-
                 <path
                   d="M6 23V8a4 4 0 0 1 8 0v15a7 7 0 1 1-8 0Zm4-5v10m9-19q3 5 6 0 3 5 6 0m-13 10q3 5 6 0 3 5 7 0M17 5v9"
                 />
-
               </svg>
 
               <dt>
@@ -737,11 +702,9 @@
                 viewBox="0 0 36 38"
                 aria-hidden="true"
               >
-
                 <path
                   d="M17 3s-7 9-7 14a7 7 0 0 0 14 0c0-5-7-14-7-14ZM5 28q5-4 10 0t11 0M5 33q5-4 10 0t11 0"
                 />
-
               </svg>
 
               <dt>
@@ -761,11 +724,9 @@
                 viewBox="0 0 36 38"
                 aria-hidden="true"
               >
-
                 <path
                   d="m5 23 9-17q2-4 4 0l10 17M16 12v6m0 4v.2M5 29q5-4 10 0t11 0M5 34q5-4 10 0t11 0"
                 />
-
               </svg>
 
               <dt>

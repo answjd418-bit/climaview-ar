@@ -52,7 +52,6 @@ button {
   height: 100%;
 
   display: grid;
-
   place-items: center;
 
   overflow: hidden;
@@ -92,7 +91,7 @@ button {
 
 /* =========================================================
    배경
-   기존 배경 그대로 유지
+   변경하지 않음
 ========================================================= */
 
 .background-layer {
@@ -106,29 +105,25 @@ button {
 }
 
 
-body[data-year="current"]
-.background-layer {
+body[data-year="current"] .background-layer {
   background-image:
     url("./hanriver-bg.png");
 }
 
 
-body[data-year="2050"]
-.background-layer {
+body[data-year="2050"] .background-layer {
   background-image:
     url("./hanriver-bg2.png");
 }
 
 
-body[data-year="2075"]
-.background-layer {
+body[data-year="2075"] .background-layer {
   background-image:
     url("./hanriver-bg3.png");
 }
 
 
-body[data-year="2100"]
-.background-layer {
+body[data-year="2100"] .background-layer {
   background-image:
     url("./hanriver-bg4.png");
 }
@@ -160,8 +155,7 @@ body[data-year="2100"]
 }
 
 
-body:not([data-year="current"])
-.camera-feed {
+body:not([data-year="current"]) .camera-feed {
   opacity: 0;
 }
 
@@ -191,12 +185,11 @@ body:not([data-year="current"])
     rgba(255, 255, 255, .18);
 
   background:
-    rgba(45, 70, 91, .62);
+    rgba(55, 78, 96, .54);
 
   color: #ffffff;
 
   font-size: 17px;
-
   font-weight: 600;
 
   cursor: pointer;
@@ -214,8 +207,7 @@ body:not([data-year="current"])
 }
 
 
-body:not([data-year="current"])
-.camera-start-button {
+body:not([data-year="current"]) .camera-start-button {
   display: none;
 }
 
@@ -309,7 +301,6 @@ body:not([data-year="current"])
   cursor: pointer;
 
   font-size: 20px;
-
   font-weight: 500;
 
   letter-spacing: -.5px;
@@ -381,7 +372,6 @@ body:not([data-year="current"])
   cursor: pointer;
 
   font-size: 20px;
-
   font-weight: 600;
 
   letter-spacing: -.65px;
@@ -416,8 +406,7 @@ body:not([data-year="current"])
 }
 
 
-.menu[aria-expanded="true"]
-.chevron {
+.menu[aria-expanded="true"] .chevron {
   transform:
     rotate(180deg);
 }
@@ -639,17 +628,12 @@ body:not([data-year="current"])
 
   border-radius: 25px;
 
-  /*
-   * 기존보다 투명도 높임.
-   * 목표 이미지처럼 배경이 은은하게 비침.
-   */
-
   background:
     linear-gradient(
       145deg,
-      rgba(73, 109, 144, .45),
-      rgba(137, 139, 140, .42) 48%,
-      rgba(63, 73, 80, .52)
+      rgba(73, 109, 144, .46),
+      rgba(137, 139, 140, .43) 48%,
+      rgba(63, 73, 80, .50)
     );
 
   border:
@@ -738,8 +722,7 @@ body:not([data-year="current"])
 }
 
 
-.sea-level
-#sea-level-value {
+.sea-level #sea-level-value {
   font-size: inherit;
 }
 
@@ -872,8 +855,7 @@ body:not([data-year="current"])
 }
 
 
-body[data-year="current"]
-.chart-selected-point {
+body[data-year="current"] .chart-selected-point {
   display: none;
 }
 
@@ -885,8 +867,7 @@ body[data-year="current"]
 }
 
 
-body[data-year="current"]
-.chart-risk-area {
+body[data-year="current"] .chart-risk-area {
   opacity: 0;
 }
 
@@ -896,8 +877,7 @@ body[data-year="current"]
 }
 
 
-body[data-year="current"]
-.chart-value-label {
+body[data-year="current"] .chart-value-label {
   opacity: 0;
 }
 
@@ -921,7 +901,7 @@ body[data-year="current"]
 
 
 /* =========================================================
-   정보 카드 하단
+   하단 정보
 ========================================================= */
 
 .metrics {
@@ -1025,22 +1005,19 @@ body[data-year="current"]
 }
 
 
-/* 현재 화면은 침수 범위 없음 */
+/* 현재 화면에는 없음 */
 
-body[data-year="current"]
-.flood-overlay {
+body[data-year="current"] .flood-overlay {
   display: none;
 }
 
 
 
 /* =========================================================
-   2050
-   최종 디자인 기준으로 약간 왼쪽 + 위
+   연도별 침수 PNG 위치
 ========================================================= */
 
-body[data-year="2050"]
-.waterline-image {
+body[data-year="2050"] .waterline-image {
   left: 385px;
   top: 611px;
 
@@ -1048,13 +1025,7 @@ body[data-year="2050"]
 }
 
 
-
-/* =========================================================
-   2075
-========================================================= */
-
-body[data-year="2075"]
-.waterline-image {
+body[data-year="2075"] .waterline-image {
   left: -30px;
   top: 610px;
 
@@ -1062,30 +1033,25 @@ body[data-year="2075"]
 }
 
 
+body[data-year="2100"] .waterline-image {
+  left: -315px;
+  top: 515px;
 
-/* =========================================================
-   2100
-   현재보다 상당히 왼쪽 + 위 이동
-========================================================= */
-
-body[data-year="2100"]
-.waterline-image {
-  left: -145px;
-  top: 553px;
-
-  width: 1713px;
+  width: 1830px;
 }
 
 
 
 /* =========================================================
    침수 예상 구간 카드
+
+   오른쪽 정보 카드와 투명도 감각을 맞춤
 ========================================================= */
 
 .flood-legend {
   position: absolute;
 
-  z-index: 2;
+  z-index: 3;
 
   width: 324px;
   height: 94px;
@@ -1105,28 +1071,28 @@ body[data-year="2100"]
   border-radius: 24px;
 
   /*
-   * 핵심 수정
-   * 이전보다 배경 투명도를 낮추고 blur 강화
+   * 오른쪽 카드와 비슷한 투명도.
+   * 너무 회색 박스처럼 보이지 않도록 실제 배경이 비침.
    */
 
   background:
     linear-gradient(
       145deg,
-      rgba(55, 70, 82, .58),
-      rgba(63, 69, 75, .55)
+      rgba(60, 78, 92, .48),
+      rgba(76, 82, 88, .46)
     );
 
   border:
     1px solid
-    rgba(255, 255, 255, .16);
+    rgba(255, 255, 255, .15);
 
   box-shadow:
     inset
     0 1px 1px
     rgba(255, 255, 255, .10),
 
-    0 12px 30px
-    rgba(12, 25, 38, .12);
+    0 12px 32px
+    rgba(12, 25, 38, .10);
 
   -webkit-backdrop-filter:
     blur(24px);
@@ -1197,28 +1163,146 @@ body[data-year="2100"]
 
 
 /* =========================================================
-   침수 카드 위치
-   최종 디자인 기준
+   연도별 카드 위치
 ========================================================= */
 
-body[data-year="2050"]
-.flood-legend {
+body[data-year="2050"] .flood-legend {
   left: 474px;
   top: 655px;
 }
 
 
-body[data-year="2075"]
-.flood-legend {
+body[data-year="2075"] .flood-legend {
   left: 406px;
   top: 725px;
 }
 
 
-body[data-year="2100"]
-.flood-legend {
+body[data-year="2100"] .flood-legend {
   left: 328px;
   top: 550px;
+}
+
+
+
+/* =========================================================
+   카드 → 해안선 연결선
+========================================================= */
+
+.flood-connector {
+  position: absolute;
+
+  z-index: 2;
+
+  display: block;
+
+  height: 2px;
+
+  background:
+    rgba(255, 255, 255, .95);
+
+  transform-origin:
+    left center;
+
+  border-radius: 2px;
+
+  box-shadow:
+    0 0 2px
+    rgba(255, 255, 255, .20);
+}
+
+
+
+/* 기준점 */
+
+.flood-anchor {
+  position: absolute;
+
+  z-index: 4;
+
+  display: block;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  border:
+    4px solid
+    rgba(160, 176, 186, .82);
+
+  background:
+    rgba(245, 248, 249, .98);
+
+  box-shadow:
+    0 2px 5px
+    rgba(24, 34, 42, .20);
+}
+
+
+
+/* =========================================================
+   2050 연결선
+========================================================= */
+
+body[data-year="2050"] .flood-connector {
+  left: 462px;
+  top: 777px;
+
+  width: 62px;
+
+  transform:
+    rotate(-45deg);
+}
+
+
+body[data-year="2050"] .flood-anchor {
+  left: 455px;
+  top: 768px;
+}
+
+
+
+/* =========================================================
+   2075 연결선
+========================================================= */
+
+body[data-year="2075"] .flood-connector {
+  left: 359px;
+  top: 837px;
+
+  width: 71px;
+
+  transform:
+    rotate(-48deg);
+}
+
+
+body[data-year="2075"] .flood-anchor {
+  left: 352px;
+  top: 828px;
+}
+
+
+
+/* =========================================================
+   2100 연결선
+========================================================= */
+
+body[data-year="2100"] .flood-connector {
+  left: 311px;
+  top: 681px;
+
+  width: 74px;
+
+  transform:
+    rotate(-43deg);
+}
+
+
+body[data-year="2100"] .flood-anchor {
+  left: 303px;
+  top: 672px;
 }
 
 
@@ -1249,8 +1333,7 @@ body[data-year="2100"]
 
 /* 2050 */
 
-body[data-year="2050"]
-.scene::after {
+body[data-year="2050"] .scene::after {
   opacity: .025;
 
   box-shadow:
@@ -1264,8 +1347,7 @@ body[data-year="2050"]
 
 /* 2075 */
 
-body[data-year="2075"]
-.scene::after {
+body[data-year="2075"] .scene::after {
   opacity: 1;
 
   box-shadow:
@@ -1288,8 +1370,7 @@ body[data-year="2075"]
 
 /* 2100 */
 
-body[data-year="2100"]
-.scene::after {
+body[data-year="2100"] .scene::after {
   opacity: 1;
 
   box-shadow:
