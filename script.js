@@ -200,6 +200,7 @@ cameraStartButton.addEventListener(
 );
 
 
+
 /* 최초 로딩 */
 
 startCamera();
@@ -231,7 +232,7 @@ const climateData = {
       "해당 없음",
 
     waterlineImage:
-      "./2026_waterline.png",
+      null,
 
     chartValue:
       "+0 cm",
@@ -460,12 +461,13 @@ function changeYear(key) {
   }
 
 
+
   document.body.dataset.year =
     key;
 
 
 
-  /* 현재로 돌아오면 카메라 재시도 */
+  /* 현재 화면으로 돌아올 경우 카메라 */
 
   if (
     key === "current" &&
@@ -504,7 +506,7 @@ function changeYear(key) {
 
 
 
-  /* 오른쪽 정보 */
+  /* 오른쪽 카드 */
 
   infoTitle.textContent =
     data.title;
@@ -526,18 +528,23 @@ function changeYear(key) {
     data.warningArea;
 
 
-
-  /* 수면선 / 침수 이미지 교체 */
-
-  waterlineImage.src =
-    data.waterlineImage;
-
-
-
   infoCard.setAttribute(
     "aria-label",
     `${data.title} 기후 정보`
   );
+
+
+
+  /* 침수 예상 범위 이미지 */
+
+  if (
+    data.waterlineImage
+  ) {
+
+    waterlineImage.src =
+      data.waterlineImage;
+
+  }
 
 
 
@@ -560,6 +567,7 @@ function changeYear(key) {
     return;
 
   }
+
 
 
   selectedPoint.style.display =

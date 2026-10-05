@@ -14,9 +14,11 @@
   background: #162733;
 }
 
+
 * {
   box-sizing: border-box;
 }
+
 
 html,
 body {
@@ -33,10 +35,12 @@ body {
   text-size-adjust: 100%;
 }
 
+
 button {
   font: inherit;
   color: inherit;
 }
+
 
 
 /* =========================================================
@@ -48,10 +52,12 @@ button {
   height: 100%;
 
   display: grid;
+
   place-items: center;
 
   overflow: hidden;
 }
+
 
 .scene {
   position: relative;
@@ -73,16 +79,19 @@ button {
   transform-origin: center;
 }
 
+
 .background-layer,
 .gui-layer,
 .flood-overlay {
   position: absolute;
+
   inset: 0;
 }
 
 
+
 /* =========================================================
-   카메라 / 연도별 배경
+   카메라 / 배경
 ========================================================= */
 
 .background-layer {
@@ -95,11 +104,13 @@ button {
   background-repeat: no-repeat;
 }
 
+
 body[data-year="current"]
 .background-layer {
   background-image:
     url("./hanriver-bg.png");
 }
+
 
 body[data-year="2050"]
 .background-layer {
@@ -107,11 +118,13 @@ body[data-year="2050"]
     url("./hanriver-bg2.png");
 }
 
+
 body[data-year="2075"]
 .background-layer {
   background-image:
     url("./hanriver-bg3.png");
 }
+
 
 body[data-year="2100"]
 .background-layer {
@@ -120,8 +133,9 @@ body[data-year="2100"]
 }
 
 
+
 /* =========================================================
-   카메라
+   실제 카메라
 ========================================================= */
 
 .camera-feed {
@@ -144,10 +158,12 @@ body[data-year="2100"]
     opacity .35s ease;
 }
 
+
 body:not([data-year="current"])
 .camera-feed {
   opacity: 0;
 }
+
 
 
 /* 카메라 시작 버튼 */
@@ -182,6 +198,7 @@ body:not([data-year="current"])
   color: #ffffff;
 
   font-size: 17px;
+
   font-weight: 600;
 
   cursor: pointer;
@@ -193,14 +210,17 @@ body:not([data-year="current"])
     blur(20px);
 }
 
+
 .camera-start-button[hidden] {
   display: none;
 }
+
 
 body:not([data-year="current"])
 .camera-start-button {
   display: none;
 }
+
 
 
 /* =========================================================
@@ -227,9 +247,11 @@ body:not([data-year="current"])
     blur(20px);
 }
 
+
 .gui-layer {
   z-index: 3;
 }
+
 
 
 /* =========================================================
@@ -260,12 +282,17 @@ body:not([data-year="current"])
     rgba(52, 81, 111, .42);
 }
 
+
 .year {
   width: 122px;
   min-width: 122px;
+
   height: 46px;
 
-  flex: 0 0 122px;
+  flex:
+    0
+    0
+    122px;
 
   display: flex;
 
@@ -284,6 +311,7 @@ body:not([data-year="current"])
   cursor: pointer;
 
   font-size: 20px;
+
   font-weight: 500;
 
   letter-spacing: -.5px;
@@ -293,19 +321,19 @@ body:not([data-year="current"])
   white-space: nowrap;
 
   word-break: keep-all;
+
   overflow-wrap: normal;
-
-  writing-mode: horizontal-tb;
-
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
 }
+
 
 .year.selected {
   width: 122px;
   min-width: 122px;
 
-  flex: 0 0 122px;
+  flex:
+    0
+    0
+    122px;
 
   color: #ffffff;
 
@@ -318,6 +346,7 @@ body:not([data-year="current"])
 
   font-weight: 600;
 }
+
 
 
 /* =========================================================
@@ -333,9 +362,11 @@ body:not([data-year="current"])
   width: 230px;
 }
 
+
 .menu-group {
   margin-bottom: 19px;
 }
+
 
 .menu {
   width: 100%;
@@ -360,10 +391,12 @@ body:not([data-year="current"])
   cursor: pointer;
 
   font-size: 20px;
+
   font-weight: 600;
 
   letter-spacing: -.65px;
 }
+
 
 .response-menu {
   background:
@@ -373,6 +406,7 @@ body:not([data-year="current"])
       rgba(148, 125, 105, .48)
     );
 }
+
 
 .chevron {
   width: 0;
@@ -391,11 +425,13 @@ body:not([data-year="current"])
     transform .3s ease;
 }
 
+
 .menu[aria-expanded="true"]
 .chevron {
   transform:
     rotate(180deg);
 }
+
 
 
 /* =========================================================
@@ -429,6 +465,7 @@ body:not([data-year="current"])
     margin .3s ease;
 }
 
+
 .submenu.open {
   max-height: 390px;
 
@@ -442,6 +479,7 @@ body:not([data-year="current"])
   opacity: 1;
 }
 
+
 .submenu-divider {
   height: 1px;
 
@@ -453,6 +491,7 @@ body:not([data-year="current"])
   background:
     rgba(255, 255, 255, .24);
 }
+
 
 .submenu-item {
   width: 100%;
@@ -482,6 +521,7 @@ body:not([data-year="current"])
   cursor: pointer;
 }
 
+
 .submenu-item.active {
   background:
     rgba(173, 163, 109, .22);
@@ -492,13 +532,17 @@ body:not([data-year="current"])
 }
 
 
+
 /* 기후 시뮬레이션 아이콘 */
 
 .climate-menu-icon {
   width: 30px;
   height: 30px;
 
-  flex: 0 0 30px;
+  flex:
+    0
+    0
+    30px;
 
   display: block;
 
@@ -506,13 +550,17 @@ body:not([data-year="current"])
 }
 
 
-/* 대응 요소 배치 아이콘 */
+
+/* 대응 요소 아이콘 */
 
 .response-menu-icon {
   width: 40px;
   height: 40px;
 
-  flex: 0 0 40px;
+  flex:
+    0
+    0
+    40px;
 
   display: block;
 
@@ -520,6 +568,7 @@ body:not([data-year="current"])
 
   opacity: 1;
 }
+
 
 
 /* =========================================================
@@ -544,6 +593,7 @@ body:not([data-year="current"])
     );
 }
 
+
 .map-preview {
   width: 100%;
   height: 144px;
@@ -562,6 +612,7 @@ body:not([data-year="current"])
     0;
 }
 
+
 .map-card-footer {
   height: 72px;
 
@@ -574,6 +625,7 @@ body:not([data-year="current"])
   align-items: center;
 }
 
+
 .map-location-name {
   font-size: 17px;
 
@@ -583,8 +635,9 @@ body:not([data-year="current"])
 }
 
 
+
 /* =========================================================
-   오른쪽 카드
+   오른쪽 정보 카드
 ========================================================= */
 
 .info-card {
@@ -613,6 +666,7 @@ body:not([data-year="current"])
     );
 }
 
+
 .card-header {
   height: 32px;
 
@@ -624,6 +678,7 @@ body:not([data-year="current"])
   padding-right: 5px;
 }
 
+
 .card-header h1 {
   margin: 0;
 
@@ -633,6 +688,7 @@ body:not([data-year="current"])
 
   letter-spacing: -.5px;
 }
+
 
 .scenario {
   padding:
@@ -652,8 +708,9 @@ body:not([data-year="current"])
 }
 
 
+
 /* =========================================================
-   큰 수치
+   해수면 수치
 ========================================================= */
 
 .sea-level {
@@ -675,10 +732,12 @@ body:not([data-year="current"])
   letter-spacing: -3px;
 }
 
+
 .sea-level
 #sea-level-value {
   font-size: inherit;
 }
+
 
 .sea-unit {
   margin-left: 5px;
@@ -687,6 +746,7 @@ body:not([data-year="current"])
 
   letter-spacing: -2px;
 }
+
 
 .sea-caption {
   margin:
@@ -707,6 +767,7 @@ body:not([data-year="current"])
 
   font-weight: 500;
 }
+
 
 .info-icon {
   width: 19px;
@@ -731,6 +792,7 @@ body:not([data-year="current"])
 }
 
 
+
 /* =========================================================
    그래프
 ========================================================= */
@@ -749,6 +811,7 @@ body:not([data-year="current"])
     rgba(255, 255, 255, .29);
 }
 
+
 .chart-section h2 {
   margin:
     0
@@ -760,6 +823,7 @@ body:not([data-year="current"])
   font-weight: 500;
 }
 
+
 .chart {
   width: 336px;
   height: 164px;
@@ -769,6 +833,7 @@ body:not([data-year="current"])
   overflow: visible;
 }
 
+
 .axis-label {
   fill: #ffffff;
 
@@ -777,6 +842,7 @@ body:not([data-year="current"])
   font-size: 16px;
 }
 
+
 .chart-anchor-points circle {
   fill: #6eb8d4;
 
@@ -784,6 +850,7 @@ body:not([data-year="current"])
 
   stroke-width: 2;
 }
+
 
 .chart-selected-point {
   fill: #ee7562;
@@ -799,10 +866,12 @@ body:not([data-year="current"])
     );
 }
 
+
 body[data-year="current"]
 .chart-selected-point {
   display: none;
 }
+
 
 .chart-risk-area {
   opacity: 1;
@@ -810,24 +879,29 @@ body[data-year="current"]
   pointer-events: none;
 }
 
+
 body[data-year="current"]
 .chart-risk-area {
   opacity: 0;
 }
 
+
 .chart-value-label {
   opacity: 1;
 }
+
 
 body[data-year="current"]
 .chart-value-label {
   opacity: 0;
 }
 
+
 .chart-value-label rect {
   fill:
     rgba(201, 91, 75, .90);
 }
+
 
 .chart-value-label text {
   fill: #ffffff;
@@ -840,6 +914,7 @@ body[data-year="current"]
 }
 
 
+
 /* =========================================================
    하단 정보
 ========================================================= */
@@ -847,6 +922,7 @@ body[data-year="current"]
 .metrics {
   margin: 0;
 }
+
 
 .metric {
   height: 72px;
@@ -867,13 +943,16 @@ body[data-year="current"]
   font-size: 17px;
 }
 
+
 .metric:first-child {
   height: 76px;
 }
 
+
 .metric:last-child {
   border: 0;
 }
+
 
 .metric svg {
   width: 36px;
@@ -890,9 +969,11 @@ body[data-year="current"]
   stroke-linejoin: round;
 }
 
+
 .metric dt {
   font-weight: 500;
 }
+
 
 .metric dd {
   margin: 0;
@@ -903,20 +984,21 @@ body[data-year="current"]
 }
 
 
+
 /* =========================================================
-   연도별 수면선 / 침수 이미지
+   침수 예상 범위 PNG
 ========================================================= */
 
 .flood-overlay {
+  position: absolute;
+
+  inset: 0;
+
   z-index: 2;
 
   pointer-events: none;
 }
 
-
-/*
- * 공통
- */
 
 .waterline-image {
   position: absolute;
@@ -929,32 +1011,28 @@ body[data-year="current"]
 
   pointer-events: none;
 
-  transform-origin: top left;
-
-  transition:
-    opacity .25s ease;
-}
-
-
-/* =========================================================
-   2026 현재
-   원본 이미지: 198 x 74
-========================================================= */
-
-body[data-year="current"]
-.waterline-image {
-  left: 498px;
-  top: 720px;
-
-  width: 198px;
+  transform-origin:
+    top left;
 
   opacity: 1;
 }
 
 
+
+/* =========================================================
+   현재
+   수면선 이미지 완전히 숨김
+========================================================= */
+
+body[data-year="current"]
+.flood-overlay {
+  display: none;
+}
+
+
+
 /* =========================================================
    2050
-   원본 이미지: 1185 x 643
 ========================================================= */
 
 body[data-year="2050"]
@@ -963,14 +1041,12 @@ body[data-year="2050"]
   top: 625px;
 
   width: 1185px;
-
-  opacity: 1;
 }
+
 
 
 /* =========================================================
    2075
-   원본 이미지: 1502 x 971
 ========================================================= */
 
 body[data-year="2075"]
@@ -979,27 +1055,23 @@ body[data-year="2075"]
   top: 622px;
 
   width: 1502px;
-
-  opacity: 1;
 }
+
 
 
 /* =========================================================
    2100
-   원본 이미지: 1713 x 1543
-
-   목표 화면에 맞게 확대해서 사용
+   수정된 PNG를 그대로 사용
 ========================================================= */
 
 body[data-year="2100"]
 .waterline-image {
-  left: -130px;
-  top: 550px;
+  left: 0;
+  top: 610px;
 
-  width: 2227px;
-
-  opacity: 1;
+  width: 1713px;
 }
+
 
 
 /* =========================================================
